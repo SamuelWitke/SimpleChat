@@ -12,7 +12,7 @@ class JoinForm extends Component {
     event.preventDefault();
     const { joinFn } = this.props;
     const { name, valid} = this.state;
-    if (valid) {
+    if (!valid) {
       return;
     }
     joinFn(name);
@@ -38,13 +38,14 @@ class JoinForm extends Component {
     return (
       <div>
         <input
+        style={{float: "left"}}
           type="text"
           maxLength="20"
           placeholder="Your name"
           onKeyDown={this.checkName}
           onChange={this.checkName}
         />
-        <button onClick={this.onJoinClick} disabled={valid}>
+        <button onClick={this.onJoinClick} disabled={!valid}>
           Join
         </button>
       </div>

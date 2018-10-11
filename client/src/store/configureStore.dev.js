@@ -22,7 +22,7 @@ export default () => {
         );
 
         receive(store.dispatch);
-        // requestUsers(send);
+        requestUsers(send);
         return store;
     });
 };

@@ -15,21 +15,21 @@ code {
     width: 100%;
     height: 100%;
     grid-template-areas: "main main head" "main main nav" "main main nav";
-    grid-template-rows: 50em 3em 3em;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 30em .5em 3em;
+    grid-template-columns: 1fr .5fr 1fr;
 }
 
 #page>header {
     grid-area: head;
-    background-color: #8ca0ff;
+    background-color: #aac1dd6b;
 }
 
 #page>nav {
     grid-area: nav;
-    background-color: #ffa08c;
+    background-color: #0a6fea6b;
 }
 
 #page>main {
     grid-area: main;
-    background-color: #ffff64;
+    background-color: #282c34;
 }
