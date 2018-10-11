@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server For Websocket",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "SamuelWitke",
+  "license": "ISC",
+  "dependencies": {
+    "express-session": "^1.15.6",
+    "fs-extra": "^7.0.0",
+    "helmet": "^3.14.0",
+    "level": "^4.0.0",
+    "level-session-store": "^2.1.0",
+    "lodash": "^4.17.11",
+    "polka": "^0.5.1",
+    "serve-static": "^1.13.2",
+    "uuid": "^3.3.2",
+    "ws": "^6.1.0"
+  }
+}
