@@ -36,16 +36,17 @@ class JoinForm extends Component {
     
 
     return (
-      <div>
+      <div className="message-box">
         <input
-        style={{float: "left"}}
+        className="input"
+
           type="text"
           maxLength="20"
           placeholder="Your name"
           onKeyDown={this.checkName}
           onChange={this.checkName}
         />
-        <button onClick={this.onJoinClick} disabled={!valid}>
+        <button className="submit" type="submit" onClick={this.onJoinClick} disabled={!valid}>
           Join
         </button>
       </div>

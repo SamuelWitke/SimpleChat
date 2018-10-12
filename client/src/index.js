@@ -7,13 +7,14 @@ import setupStore from './store/index';
 import { Provider } from "react-redux";
 import Error from './components/Error';
 
-setupStore.then((store) => (
+setupStore.then((store) => {
+  console.log("store rendered");
   ReactDOM.render(
       <Provider store={store}>
         <App />
       </Provider>,
   document.getElementById('root'))
-  )).catch( (e) => {
+  }).catch( (e) => {
     return (
   ReactDOM.render(
   <Error error ={e.toString()}/>,

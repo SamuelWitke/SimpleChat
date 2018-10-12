@@ -38,13 +38,13 @@ class SendMessageForm extends Component {
     return (
       <div>
         <input
-          className="send-message-form-input"
+          className="input"
           placeholder="Say something nice"
           maxLength="200"
           onChange={this.onChange}
           onKeyDown={this.onKeyDown}
         />
-        <button onClick={this.onSendClick} disabled={!valid}>
+        <button className="submit" onClick={this.onSendClick} disabled={!valid}>
           Send
         </button>
       </div>
