@@ -7,18 +7,24 @@ The WebSocket API is an advanced technology that makes it possible to open a two
 
 This appliction integrates with redux by passing a thunk to the onmessage recieve function.
 ```javascript
-  const receive = (onMessageCb) => {
-	  webSocket.onmessage = (event) => onMessageCb(JSON.parse(event.data));
-  };
+ 	const webSocket = Singleton.getInstance();
+	const receive = (onMessageCb) => {
+		webSocket.onmessage = (event) => onMessageCb(JSON.parse(event.data));
+	};
+
 	const send = (type, payload) =>
 	webSocket.send(JSON.stringify({ type, payload }));
-              
-              ...
-  const middleware=[thunkMiddleware.withExtraArgument({ send }), logger];
-  const store = createStore(
-    rootReducer,
-    initialState,
-    applyMiddleware(...middleware),
-  );
-  receive(store.dispatch);
+	webSocket.onopen = () => resolve({ send, receive });
+	webSocket.onclose = () => { 
+		webSocket.close();
+		reject(new Error("WebSocket Closed"));
+	}          
+	...
+  	const middleware=[thunkMiddleware.withExtraArgument({ send }), logger];
+  	const store = createStore(
+    		rootReducer,
+    		initialState,
+    		applyMiddleware(...middleware),
+  	);
+  	receive(store.dispatch);
 ```
