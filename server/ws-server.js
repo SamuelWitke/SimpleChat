@@ -16,6 +16,7 @@ const setupWss = async (serverApp, sessionMiddleware) => {
   wss.on("connection", (ws, req) => {
     ws.req = req;
     ws.isAlive = true;
+    console.log("new connection")
 
     checkHandleReconnect({ wss, ws });
 

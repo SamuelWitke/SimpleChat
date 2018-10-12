@@ -10,7 +10,7 @@ const {
   usersRequested,
   userStartedTyping,
   userStoppedTyping,
-} = require("../common/message-types");
+} = require("./common/message-types");
 
 const parseMessage = (json) => {
   try {
